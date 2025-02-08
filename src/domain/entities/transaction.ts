@@ -1,21 +1,17 @@
-import { randomUUID } from "node:crypto"
-import { Entity } from "./entity"
+import { Entity } from './entity'
 
-export interface  TransactionProps {
+export interface TransactionProps {
   value: number
   dateTime: string
 }
 
 export class Transaction extends Entity<TransactionProps> {
-  private constructor( props: TransactionProps, id?: string) {
+  private constructor(props: TransactionProps, id?: string) {
     super(props, id)
   }
-  public static create(props: TransactionProps, id?: string): Transaction {
-   return new Transaction(props, id)
-  } 
 
-  get transationId() {
-    return this.id
+  public static create(props: TransactionProps, id?: string): Transaction {
+    return new Transaction(props, id)
   }
 
   get value() {
@@ -31,7 +27,6 @@ export class Transaction extends Entity<TransactionProps> {
   }
 
   set dateTime(date: string) {
-    this.props.dateTime= date
+    this.props.dateTime = date
   }
-
 }
