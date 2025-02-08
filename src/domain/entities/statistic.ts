@@ -1,7 +1,6 @@
-import { randomUUID } from "node:crypto"
-import { Entity } from "./entity"
+import { Entity } from './entity'
 
-export interface StatisticProps  {
+export interface StatisticProps {
   count: number,
   sum: number,
   avg: number,
@@ -10,17 +9,12 @@ export interface StatisticProps  {
 }
 
 export class Statistic extends Entity<StatisticProps> {
-
- private constructor(props: StatisticProps,  id?: string) {
-   super(props, id)
+  private constructor(props: StatisticProps, id?: string) {
+    super(props, id)
   }
 
   public static create(props: StatisticProps, id?: string) {
     return new Statistic(props, id)
-  }
-
-  get StatisticProps() {
-    return this.id
   }
 
   get count() {
@@ -30,12 +24,15 @@ export class Statistic extends Entity<StatisticProps> {
   set count(num: number) {
     this.props.count = num
   }
+
   get sum() {
     return this.props.sum
   }
+
   set sum(num: number) {
     this.props.sum = num
   }
+
   get avg() {
     return this.props.avg
   }
@@ -43,6 +40,7 @@ export class Statistic extends Entity<StatisticProps> {
   set avg(num: number) {
     this.props.avg = num
   }
+
   get min() {
     return this.props.min
   }
@@ -50,6 +48,7 @@ export class Statistic extends Entity<StatisticProps> {
   set min(num: number) {
     this.props.min = num
   }
+
   get max() {
     return this.props.max
   }
@@ -57,5 +56,4 @@ export class Statistic extends Entity<StatisticProps> {
   set max(num: number) {
     this.props.max = num
   }
-
 }
