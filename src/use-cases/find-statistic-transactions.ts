@@ -18,7 +18,6 @@ export class FindStatisticTransactionsUseCase {
       return transactionTime >= timeStemp
     })
 
-    console.log('recente Transaction', recentTransactions.length)
     if (recentTransactions.length === 0) {
       return {
         statistic: Statistic.create({
