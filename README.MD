@@ -81,7 +81,7 @@ GET /statistics
 
 ```
 
--Resposta caso as transações tenham ocorrido nos últimos 60 segundos
+- Resposta caso as transações tenham ocorrido nos últimos 60 segundos
 
 ```json
 {
